@@ -1,9 +1,15 @@
 {
   "name": "serviceworkerdemo",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "private": true,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "pkgRoot": "build"
+  },
   "dependencies": {
     "@reach/router": "^1.3.4",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -18,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "semantic-release": "semantic-release"
   },
   "eslintConfig": {
     "extends": [
@@ -37,5 +44,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SatestHee/serviceworkerdemo.git"
+  },
+  "devDependencies": {
+    "semantic-release": "^17.3.0"
   }
 }
