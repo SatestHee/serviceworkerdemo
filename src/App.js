@@ -1,25 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import  Home  from './Home';
+import  About  from './About';
+import Product from './Product';
+import React from 'react';
+import {Router} from '@reach/router';
+import {Workbox} from 'workbox-window';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <Router>
+        <Home path="/" />
+        <About path="/about" />
+        <Product path="/product" />
+      </Router>
+    </React.Fragment>
   );
+}
+
+if ('serviceWorker' in navigator) {
+  const wb = new Workbox('./service-worker.js');
+  wb.register();
 }
 
 export default App;
